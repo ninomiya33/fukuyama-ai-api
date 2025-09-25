@@ -1,11 +1,15 @@
 services:
   - type: web
-    name: fukuyama-ai-api
+    name: fukuyama-real-estate-api
     env: python
-    plan: free
-    buildCommand: pip install -r requirements.txt
+    plan: starter
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
     startCommand: python api.py
     healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
+      - key: PORT
+        value: 10000
