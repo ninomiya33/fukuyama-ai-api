@@ -14,6 +14,9 @@ from api import app
 # For WSGI compatibility, we need to expose the app
 application = app
 
+# Also expose as 'app' for compatibility
+app = application
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
