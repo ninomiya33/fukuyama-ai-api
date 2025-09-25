@@ -17,6 +17,9 @@ application = app
 # Also expose as 'app' for compatibility
 app = application
 
+# Make sure the application is available at module level
+__all__ = ['application', 'app']
+
 if __name__ == "__main__":
     import uvicorn
     port = int(os.environ.get("PORT", 8000))
