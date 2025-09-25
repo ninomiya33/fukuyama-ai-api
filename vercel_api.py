@@ -212,5 +212,4 @@ async def get_property_types():
         raise HTTPException(status_code=500, detail=f"建物タイプリスト取得エラー: {str(e)}")
 
 # Vercel用のハンドラー
-def handler(request):
-    return app
+handler = app
